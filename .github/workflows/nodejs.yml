@@ -25,12 +25,15 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
         cache: "npm"
           
     # 步骤3 下载项目依赖    
-    - name: 安装依赖性
+    - name: 安装依赖项
       run: npm install
+    
+    - name: 忽略警告项
+      run: export CI=false
       
     # 步骤4 打包node项目
     - name: 构建项目
-      run: export CI=false & npm run build # 此处是你node项目的构建脚本
+      run: npm run build # 此处是你node项目的构建脚本
       
     # 步骤5 部署项目
     - name: 部署到 pages 分支
