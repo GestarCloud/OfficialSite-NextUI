@@ -4,7 +4,7 @@ name: NextUI Node.js CI
 on:
   push: # 什么请求触发
     branches: 
-      - main： # 作用在哪些分支上
+      - main # 作用在哪些分支上
   workflow_dispatch:
 
 jobs: # 构建的任务，一个工作流有多个构建任务，
@@ -27,9 +27,6 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
     # 步骤3 下载项目依赖    
     - name: 安装依赖项
       run: npm install
-    
-    - name: 忽略警告项
-      run: export CI=false
       
     # 步骤4 打包node项目
     - name: 构建项目
@@ -44,4 +41,4 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
         # 发布到指定分支
         branch: pages
         # 指定发布的打包后的文件
-        # folder: xx/xxx/xx 
+        folder: build
