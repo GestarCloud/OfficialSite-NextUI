@@ -1,0 +1,43 @@
+# 当前工作流的名称
+name: NextUI Node.js CI
+# ci触发的条件
+on:
+  push: # 什么请求触发
+    branches: 
+    - main： # 作用在哪些分支上
+
+jobs: # 构建的任务，一个工作流有多个构建任务，
+  Build-deploy:
+    runs-on: ubuntu-latest # 在什么服务器上面执行这些任务，这里使用最新版本的ubuntu
+    
+    steps: # 构建任务的步骤，一个任务可分为多个步骤
+    
+    # 步骤1 拉取仓库代码
+    - name: 拉取代码 # 步骤名称
+      uses: actions/checkout@v2 
+      
+    # 步骤2 给当前服务器安装node
+    - name: 安装 Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16 # node版本
+        cache: "npm"
+          
+    # 步骤3 下载项目依赖    
+    - name: 安装依赖性
+      run: npm install
+      
+    # 步骤4 打包node项目
+    - name: 构建项目
+      run: npm build # 此处是你node项目的构建脚本
+      
+    # 步骤5 部署项目
+    - name: 部署到 pages 分支
+      uses: JamesIves/github-pages-deploy-action@4.1.6
+      with:
+        # 供用户访问的github access_token 下面的变量是在准备阶段自定义的变量
+        access_token: ${{ secrets.GH_ACCESS_TOKEN }} 
+        # 发布到指定分支
+        branch: pages
+        # 指定发布的打包后的文件
+        # folder: xx/xxx/xx 
