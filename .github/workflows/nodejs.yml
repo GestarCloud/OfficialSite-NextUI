@@ -4,7 +4,7 @@ name: NextUI Node.js CI
 on:
   push: # 什么请求触发
     branches: 
-    - main： # 作用在哪些分支上
+      - main： # 作用在哪些分支上
 
 jobs: # 构建的任务，一个工作流有多个构建任务，
   Build-deploy:
