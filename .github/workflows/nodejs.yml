@@ -34,11 +34,8 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
       
     # 步骤5 部署项目
     - name: 部署到 pages 分支
-      uses: JamesIves/github-pages-deploy-action@4.1.6
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        # 供用户访问的github access_token 下面的变量是在准备阶段自定义的变量
-        access_token: ${{ secrets.GH_ACCESS_TOKEN }} 
-        # 发布到指定分支
-        branch: pages
-        # 指定发布的打包后的文件
-        folder: build
+        deploy_key: ${{ secrets.GH_ACCESS_TOKEN }}
+        publish_dir: ./build
+        publish_branch: statics
