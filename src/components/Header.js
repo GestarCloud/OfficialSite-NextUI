@@ -10,7 +10,7 @@ export default function AppBar() {
         </Navbar.Brand>
         <Navbar.Content>
           <Navbar.Item>
-            <Button auto flat as={Link} herf="https://app.gestar.cloud/">
+            <Button auto flat as={Link} onClick={() =>window.location.href='https://app.gestar.cloud/'}>
               用户中心
             </Button>
           </Navbar.Item>

@@ -10,4 +10,4 @@ npm start # 开发服务器
 npm run build # 编译成生产环境
 ```
 
-开发服务器将在`http://localhost:3000/`启动。
+开发服务器将在`http://localhost:3000/`启动，编译后的文件保存在目录`./build/`下。

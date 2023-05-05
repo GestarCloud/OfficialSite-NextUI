@@ -26,7 +26,7 @@ export default function Banner() {
     </Text>
     </div>
     <Text color="#7E868C" h3>极星云是下一代服务商，致力于提供创新、方便、亲民、低价的云服务。</Text>
-    <Button color="primary" auto flat herf="https://app.gestar.cloud/">
+    <Button color="primary" auto flat onClick={() =>window.location.href='https://app.gestar.cloud/'}>
           进入控制面板
         </Button>
 </>

@@ -23,7 +23,7 @@ function List(){
         <Card.Divider />
           <Card.Footer>
             <Row justify="flex-end">
-              <Button herf="https://drive.gestar.cloud" size="sm" auto>
+              <Button onClick={() =>window.location.href=detail.url} size="sm" auto>
                 前往
               </Button>
             </Row>
@@ -33,7 +33,7 @@ function List(){
   };
     
     const products = [
-     { title: 'Gestar Drive', subTitle:'极星云盘', id: 1,content:'Gestar Drive 是一个快速、安全、灵活的云存储平台，采用 NVME 固态硬盘，提供不限下载速度；数据全部加密，备份每天进行，保证用户数据安全；无会员制度，按实际使用容量付费，支持私人节点部署，可隔离私人秘密数据。'}
+     { title: 'Gestar Drive', subTitle:'极星云盘', id: 1,content:'Gestar Drive 是一个快速、安全、灵活的云存储平台，采用 NVME 固态硬盘，提供不限下载速度；数据全部加密，备份每天进行，保证用户数据安全；无会员制度，按实际使用容量付费，支持私人节点部署，可隔离私人秘密数据。',url:'https://drive.gestar.cloud'}
      ];
     const listItems = products.map(product =>
     <div key={product.id}>
