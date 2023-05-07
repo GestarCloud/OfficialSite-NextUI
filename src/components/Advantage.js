@@ -1,4 +1,4 @@
-import { Text, Grid, Card } from "@nextui-org/react";
+import { Badge, Text, Grid, Card } from "@nextui-org/react";
 
 function List(){
     
@@ -6,6 +6,7 @@ function List(){
     return (
       <Card variant="bordered"  >
       <Card.Header>
+            <Badge color="primary" variant="points" />
             <Text b>{detail.title}</Text>
          </Card.Header>
         <Card.Divider/>
