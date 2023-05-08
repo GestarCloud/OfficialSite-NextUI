@@ -9,7 +9,7 @@ export default function AppBar() {
           </Text>
         </Navbar.Brand>
         <Navbar.Content hideIn="xs">
-          <Navbar.Link href="https://status.gestar.drive">监控</Navbar.Link>
+          <Navbar.Link href="https://status.gestar.cloud">监控</Navbar.Link>
          </Navbar.Content>
         <Navbar.Content>
           <Navbar.Item>
